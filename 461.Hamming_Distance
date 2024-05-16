@@ -1,0 +1,14 @@
+class Solution(object):
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        result_xor = x ^ y
+        hamming_distance = 0
+
+        while result_xor:
+            hamming_distance += result_xor & 1
+            result_xor >>= 1
+        return hamming_distance
